@@ -8,7 +8,7 @@ import platform.common_classes.RunConfigurations
 
 object SparkOpInstance20 extends SparkOp {
   override def name: String = "SparkOpInstance20"
-  override def inputs: Set[String] = Set("SparkOpInstance19") // Reference to SparkOpInstance19 as an input
+  override def inputs: Set[String] = Set(SparkOpInstance19.name) // Reference to SparkOpInstance19 as an input using object name
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
