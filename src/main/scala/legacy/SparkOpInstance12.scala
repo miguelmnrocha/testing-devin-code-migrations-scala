@@ -7,6 +7,8 @@ import platform.common_classes.Metadata
 import platform.common_classes.RunConfigurations
 
 object SparkOpInstance12 extends SparkOp {
+  val randomValue: Int = 3142 // Hardcoded random value
+
   override def name: String = "dataset/spark-op-instance-12"
   override def inputs: Set[String] = Set(SparkOpInstance11.name) // Reference to SparkOpInstance11 as an input using object name
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
