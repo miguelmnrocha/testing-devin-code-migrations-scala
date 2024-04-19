@@ -15,8 +15,19 @@ lazy val commonClasses = (project in file("platform/common-classes"))
     )
   )
 
+lazy val domainA = (project in file("subdomains/domain-A"))
+  .settings(
+    name := "Domain A",
+    libraryDependencies ++= Seq(
+      "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+      "org.apache.spark" %% "spark-core" % "3.5.1" % Provided,
+      "org.apache.spark" %% "spark-sql" % "3.5.1" % Provided
+    )
+  )
+  .dependsOn(commonClasses)
+
 lazy val root = (project in file("."))
-  .aggregate(commonClasses)
+  .aggregate(commonClasses, domainA)
   .dependsOn(commonClasses)
   .settings(
     name := "Testing Devin Code Migrations Scala",
