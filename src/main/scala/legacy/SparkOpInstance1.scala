@@ -10,7 +10,8 @@ object SparkOpInstance1 extends SparkOp {
   override def name: String = "SparkOpInstance1"
   override def inputs: Set[String] = Set() // No inputs, making it a root
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
-    // Mock implementation for query
+    // Using randomValue from SparkOpInstance20 as instructed
+    val _ = SparkOpInstance20.randomValue
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
   override def metadata: Metadata = {

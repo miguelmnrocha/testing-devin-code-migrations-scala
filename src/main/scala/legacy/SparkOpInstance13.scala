@@ -12,6 +12,8 @@ object SparkOpInstance13 extends SparkOp {
   override def name: String = "nu-br/dataset/spark-op-instance-13"
   override def inputs: Set[String] = Set(SparkOpInstance12.name) // Reference to SparkOpInstance12 as an input using object name
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
+    // Using randomValue from SparkOpInstance12 as instructed
+    val _ = SparkOpInstance12.randomValue
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
   override def metadata: Metadata = {
