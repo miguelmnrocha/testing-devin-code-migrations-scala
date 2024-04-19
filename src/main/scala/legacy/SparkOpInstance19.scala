@@ -5,12 +5,10 @@ import platform.common_classes.SparkOp
 import org.apache.spark.sql.DataFrame
 import platform.common_classes.Metadata
 import platform.common_classes.RunConfigurations
-import platform.common_classes.Metadata
-import platform.common_classes.RunConfigurations
 
 object SparkOpInstance19 extends SparkOp {
   override def name: String = "SparkOpInstance19"
-  override def inputs: Set[String] = Set("input1", "input2")
+  override def inputs: Set[String] = Set("SparkOpInstance18") // Reference to SparkOpInstance18 as an input
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
