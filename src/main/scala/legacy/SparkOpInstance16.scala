@@ -1,12 +1,7 @@
 package legacy
 import org.apache.spark.sql.SparkSession
-
-import platform.common_classes.SparkOp
 import org.apache.spark.sql.DataFrame
-import platform.common_classes.Metadata
-import platform.common_classes.RunConfigurations
-import platform.common_classes.Metadata
-import platform.common_classes.RunConfigurations
+import platform.common_classes.{SparkOp, Metadata, RunConfigurations}
 
 object SparkOpInstance16 extends SparkOp {
   val randomValue: Int = 6729 // Hardcoded random value
@@ -16,10 +11,6 @@ object SparkOpInstance16 extends SparkOp {
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
-  override def metadata: Metadata = {
-    new Metadata()
-  }
-  override def runConfigurations: RunConfigurations = {
-    new RunConfigurations()
-  }
+  override def metadata: Metadata = new Metadata()
+  override def runConfigurations: RunConfigurations = new RunConfigurations()
 }
