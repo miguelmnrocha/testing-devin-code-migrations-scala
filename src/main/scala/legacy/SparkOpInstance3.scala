@@ -10,10 +10,11 @@ object SparkOpInstance3 extends SparkOp {
   val randomValue: Int = 6243 // Hardcoded random value
 
   override def name: String = "dataset/spark-op-instance-3"
-  override def inputs: Set[String] = Set(SparkOpInstance2.name) // Reference to SparkOpInstance2 as an input using object name
+  // Updated to hardcoded name to comply with submodule isolation rules
+  override def inputs: Set[String] = Set("dataset/spark-op-instance-2-hardcoded-name") 
   override def query(inputs: Map[String, DataFrame]): DataFrame = {
-    // Using randomValue from SparkOpInstance2 as instructed
-    val _ = SparkOpInstance2.randomValue
+    // Removed usage of SparkOpInstance2.randomValue due to submodule isolation rules
+    // If needed, replace with a hardcoded value specific to SparkOpInstance3
     SparkSession.builder().getOrCreate().emptyDataFrame
   }
   override def metadata: Metadata = {
