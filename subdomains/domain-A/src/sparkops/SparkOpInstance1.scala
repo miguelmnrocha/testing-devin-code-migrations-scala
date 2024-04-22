@@ -1,10 +1,10 @@
 package legacy
 import org.apache.spark.sql.SparkSession
 
-import platform.common_classes.{Metadata, RunConfigurations, SparkOp}
+import platform.common_classes.{Metadata, RunConfigurations, SubdomainOp}
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object SparkOpInstance1 extends SparkOp {
+object SparkOpInstance1 extends SubdomainOp {
   val randomValue: Int = 7345 // Hardcoded random value
 
   override def name: String = "dataset/spark-op-instance-1"
