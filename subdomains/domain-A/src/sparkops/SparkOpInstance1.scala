@@ -1,4 +1,4 @@
-package legacy
+package subdomains.domainA.src.sparkops
 import org.apache.spark.sql.SparkSession
 
 import platform.common_classes.{Metadata, RunConfigurations, SubdomainOp}
