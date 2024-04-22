@@ -2,7 +2,7 @@ import platform.common_classes.SparkOp
 
 object DAG {
   val ops: Set[SparkOp] = Set(
-    legacy.SparkOpInstance1,
+    // legacy.SparkOpInstance1, // Removed reference to SparkOpInstance1 as it has been migrated to a new submodule
     legacy.SparkOpInstance2,
     legacy.SparkOpInstance3,
     legacy.SparkOpInstance4,
