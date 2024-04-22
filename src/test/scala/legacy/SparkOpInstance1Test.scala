@@ -1,5 +1,5 @@
 import org.scalatest.funsuite.AnyFunSuite
-import legacy.SparkOpInstance1
+import subdomains.domainA.src.sparkops.SparkOpInstance1
 
 class SparkOpInstance1Test extends AnyFunSuite {
   test("SparkOpInstance1: name should follow naming conventions") {
